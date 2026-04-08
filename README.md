@@ -19,5 +19,16 @@ cargo run
 When you run the program, it should run similar to this:
 
 ```text
-WORK IN PROGRESS... PROGRAM WILL NOT RUN YET!
+--- Welcome to the Company Directory! ---
+Please enter a command. (ex: help)
+add
+Enter name: Nathan Hotchkiss
+Enter department: Repair
+Added Nathan Hotchkiss to the Repair department in the directory!
+Please enter a command. (ex: help)
+list
+Department: Repair
+ - Nathan Hotchkiss
+Please enter a command. (ex: help)
+quit
 ```
