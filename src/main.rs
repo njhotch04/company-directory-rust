@@ -1,6 +1,6 @@
 use std::collections::HashMap;
+use std::io;
 
-#[derive(Debug, Clone)]
 struct Employee {
     name: String,
     department: String,
@@ -10,33 +10,22 @@ struct Employee {
 }
 
 fn main() {
-    let employee1 = Employee {
-        name: String::from("Nathan Hotchkiss"),
-        department: String::from("Repair"),
-        email: String::from("njhotch04@gmail.com"),
-        phone: String::from("207-XXX-XXXX"),
-        remote: true,
-    };
-
-    let employee2 = Employee {
-        name: String::from("Ron Hotchkiss"),
-        department: String::from("Installation"),
-        email: String::from("XXXXXXXX@gmail.com"),
-        phone: String::from("207-XXX-XXXX"),
-        remote: false,
-    };
+    println!("--- Welcome to the Company Directory! ---");
 
     let mut directory: HashMap<String, Vec<Employee>> = HashMap::new();
 
-    directory
-        .entry(employee1.department.clone())
-        .or_insert(Vec::new())
-        .push(employee1);
+    loop {
+        println!("Please enter a command.");
 
-    directory
-        .entry(employee2.department.clone())
-        .or_insert(Vec::new())
-        .push(employee2);
+        let mut command = String::new();
+        io::stdin()
+            .read_line(&mut command)
+            .expect("Failed to read line.");
 
-    println!("{:#?}", directory);
+        let command = command.trim();
+
+        if command == "quit" {
+            break;
+        }
+    }
 }
